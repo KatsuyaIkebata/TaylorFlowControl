@@ -1,0 +1,61 @@
+Hour,Minute,Second,millisecond,Pump,Action
+15,15,4,450,Pump 1,"Set Diameter 29.2, response: :"
+15,15,4,551,Pump 1,"Set Infuse Rate 3 mL/min, response: :"
+15,15,4,661,Pump 2,"Set Diameter 29.2, response: 04:"
+15,15,4,761,Pump 2,"Set Infuse Rate 3 mL/min, response: 04:"
+15,15,4,761,Pump 1,Run
+15,15,4,861,Pump 1,Pump 1 Run Response: >
+15,15,5,91,Pump 1,Stop
+15,15,5,91,Pump 2,Run
+15,15,5,191,Pump 1,Pump 1 Stop Response: :
+15,15,5,194,Pump 2,Pump 2 Run Response: 04>
+15,15,6,667,Pump 2,Stop
+15,15,6,667,Pump 1,Run
+15,15,6,767,Pump 2,Pump 2 Stop Response: 04:
+15,15,6,767,Pump 1,Pump 1 Run Response: >
+15,15,6,997,Pump 1,Stop
+15,15,6,997,Pump 2,Run
+15,15,7,87,Pump 1,Pump 1 Stop Response: :
+15,15,7,87,Pump 2,Pump 2 Run Response: 04>
+15,15,8,570,Pump 2,Stop
+15,15,8,570,Pump 1,Run
+15,15,8,661,Pump 2,Pump 2 Stop Response: 04:
+15,15,8,661,Pump 1,Pump 1 Run Response: >
+15,15,8,882,Pump 1,Stop
+15,15,8,882,Pump 2,Run
+15,15,8,982,Pump 1,Pump 1 Stop Response: :
+15,15,8,984,Pump 2,Pump 2 Run Response: 04>
+15,15,10,467,Pump 2,Stop
+15,15,10,469,Pump 1,Run
+15,15,10,567,Pump 2,Pump 2 Stop Response: 04:
+15,15,10,567,Pump 1,Pump 1 Run Response: >
+15,15,10,780,Pump 1,Stop
+15,15,10,780,Pump 2,Run
+15,15,10,880,Pump 1,Pump 1 Stop Response: :
+15,15,10,880,Pump 2,Pump 2 Run Response: 04>
+15,15,12,374,Pump 2,Stop
+15,15,12,374,Pump 1,Run
+15,15,12,474,Pump 2,Pump 2 Stop Response: 04:
+15,15,12,474,Pump 1,Pump 1 Run Response: >
+15,15,12,694,Pump 1,Stop
+15,15,12,696,Pump 2,Run
+15,15,12,785,Pump 1,Pump 1 Stop Response: :
+15,15,12,785,Pump 2,Pump 2 Run Response: 04>
+15,15,14,268,Pump 2,Stop
+15,15,14,268,Pump 1,Run
+15,15,14,369,Pump 2,Pump 2 Stop Response: 04:
+15,15,14,369,Pump 1,Pump 1 Run Response: >
+15,15,14,591,Pump 1,Stop
+15,15,14,592,Pump 2,Run
+15,15,14,682,Pump 1,Pump 1 Stop Response: :
+15,15,14,682,Pump 2,Pump 2 Run Response: 04>
+15,15,16,167,Pump 2,Stop
+15,15,16,167,Pump 1,Run
+15,15,16,268,Pump 2,Pump 2 Stop Response: 04:
+15,15,16,268,Pump 1,Pump 1 Run Response: >
+15,15,16,488,Pump 1,Stop
+15,15,16,488,Pump 2,Run
+15,15,16,598,Pump 1,Pump 1 Stop Response: :
+15,15,16,598,Pump 2,Pump 2 Run Response: 04>
+15,15,16,768,Pump 1,Stop
+15,15,16,768,Pump 2,Stop
