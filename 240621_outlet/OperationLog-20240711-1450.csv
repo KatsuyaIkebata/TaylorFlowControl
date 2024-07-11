@@ -1,0 +1,61 @@
+Hour,Minute,Second,millisecond,Pump,Action
+14,50,32,807,Pump 1,"Set Diameter 29.2, response: :"
+14,50,32,907,Pump 1,"Set Infuse Rate 3 mL/min, response: :"
+14,50,33,7,Pump 2,"Set Diameter 29.2, response: 04:"
+14,50,33,107,Pump 2,"Set Infuse Rate 3 mL/min, response: 04:"
+14,50,33,107,Pump 1,Run
+14,50,33,217,Pump 1,Pump 1 Run Response: >
+14,50,33,427,Pump 1,Stop
+14,50,33,427,Pump 2,Run
+14,50,33,527,Pump 1,Pump 1 Stop Response: :
+14,50,33,527,Pump 2,Pump 2 Run Response: 04>
+14,50,35,17,Pump 2,Stop
+14,50,35,17,Pump 1,Run
+14,50,35,117,Pump 2,Pump 2 Stop Response: 04:
+14,50,35,117,Pump 1,Pump 1 Run Response: >
+14,50,35,327,Pump 1,Stop
+14,50,35,327,Pump 2,Run
+14,50,35,428,Pump 1,Pump 1 Stop Response: :
+14,50,35,428,Pump 2,Pump 2 Run Response: 04>
+14,50,36,910,Pump 2,Stop
+14,50,36,910,Pump 1,Run
+14,50,37,10,Pump 2,Pump 2 Stop Response: 04:
+14,50,37,10,Pump 1,Pump 1 Run Response: >
+14,50,37,231,Pump 1,Stop
+14,50,37,232,Pump 2,Run
+14,50,37,330,Pump 1,Pump 1 Stop Response: :
+14,50,37,330,Pump 2,Pump 2 Run Response: 04>
+14,50,38,810,Pump 2,Stop
+14,50,38,810,Pump 1,Run
+14,50,38,910,Pump 2,Pump 2 Stop Response: 04:
+14,50,38,910,Pump 1,Pump 1 Run Response: >
+14,50,39,130,Pump 1,Stop
+14,50,39,130,Pump 2,Run
+14,50,39,231,Pump 1,Pump 1 Stop Response: :
+14,50,39,231,Pump 2,Pump 2 Run Response: 04>
+14,50,40,711,Pump 2,Stop
+14,50,40,711,Pump 1,Run
+14,50,40,811,Pump 2,Pump 2 Stop Response: 04:
+14,50,40,811,Pump 1,Pump 1 Run Response: >
+14,50,41,31,Pump 1,Stop
+14,50,41,31,Pump 2,Run
+14,50,41,131,Pump 1,Pump 1 Stop Response: :
+14,50,41,131,Pump 2,Pump 2 Run Response: 04>
+14,50,42,611,Pump 2,Stop
+14,50,42,611,Pump 1,Run
+14,50,42,711,Pump 2,Pump 2 Stop Response: 04:
+14,50,42,711,Pump 1,Pump 1 Run Response: >
+14,50,42,932,Pump 1,Stop
+14,50,42,935,Pump 2,Run
+14,50,43,34,Pump 1,Pump 1 Stop Response: :
+14,50,43,34,Pump 2,Pump 2 Run Response: 04>
+14,50,44,517,Pump 2,Stop
+14,50,44,517,Pump 1,Run
+14,50,44,616,Pump 2,Pump 2 Stop Response: 04:
+14,50,44,616,Pump 1,Pump 1 Run Response: >
+14,50,44,826,Pump 1,Stop
+14,50,44,826,Pump 2,Run
+14,50,44,926,Pump 1,Pump 1 Stop Response: :
+14,50,44,926,Pump 2,Pump 2 Run Response: 04>
+14,50,45,117,Pump 1,Stop
+14,50,45,117,Pump 2,Stop
