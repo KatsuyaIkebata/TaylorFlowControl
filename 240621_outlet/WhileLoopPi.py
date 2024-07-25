@@ -72,7 +72,7 @@ if __name__ == '__main__':
     with open(csv_filename, mode='w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(csv_header)
-   
+
     # ポンプの設定(time.sleepが含まれているので注意)
     pump_setting(ser1, 'Pump 1')
     pump_setting(ser2, 'Pump 2')
@@ -80,7 +80,7 @@ if __name__ == '__main__':
     # 現在時刻をStartTimeにする
     StartTime = time.time()
     EndTime = StartTime + TotalTime * 60
-    PassedTime = 0 
+    PassedTime = 0
 
     next_1A_time = 0  # 0秒後に実行開始
     next_1B_time = next_1A_time + ResponseTime  # Aの押出開始後、応答時間が過ぎたら実行開始
@@ -100,7 +100,7 @@ if __name__ == '__main__':
     Iteration2A = 0
     Iteration2B = 0
     Iteration2C = 0
-    Iteration2D = 0  
+    Iteration2D = 0
 
     while time.time() < EndTime:
         PassedTime = time.time() - StartTime 
