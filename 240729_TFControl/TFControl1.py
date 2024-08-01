@@ -21,15 +21,15 @@ valve_delay_4C = 0.1    # バルブ4の閉鎖の遅れ時間
 TubeDiameterInch = 1/8   # inch チューブの内径
 SyringeDiameter = 29.2   # mm シリンジポンプの内径
 TotalRate = 3            # mL/min 合計流量
-TotalTime = 2            # min 合計時間
+TotalTime = 1            # min 合計時間
 AlarmTime = 0.5          # min アラームが鳴る時間
-SlugLength1 = 2          # mm スラグ1の長さ(実際は少しずれる)
-SlugLength2 = 10         # mm スラグ2の長さ(実際は少しずれる)
+SlugLength1 = 30          # mm スラグ1の長さ(実際は少しずれる)
+SlugLength2 = 50         # mm スラグ2の長さ(実際は少しずれる)
 ResponseTime = 0.1       # s 応答を待つ時間
 
 # GPIOの設定
 GPIO.setmode(GPIO.BCM)  # BCM番号でGPIOピンを指定
-GPIO.setwarnings(True)
+# GPIO.setwarnings(False)
 
 # 使用するGPIOピンの設定
 pin1 = 6  # 使用するGPIOピン番号を指定
@@ -54,8 +54,8 @@ csv_filename = f'OperationLog-{current_time}.csv'
 csv_header = ['Hour', 'Minute', 'Second','millisecond', 'Pump', 'Action']
 
 # シリアルポートの設定
-ser1 = serial.Serial(port='COM6', baudrate=115200, timeout=1)
-ser2 = serial.Serial(port='COM7', baudrate=115200, timeout=1)
+ser1 = serial.Serial(port='/dev/ttyACM0', baudrate=115200, timeout=1)
+ser2 = serial.Serial(port='/dev/ttyACM1', baudrate=115200, timeout=1)
 
 def pump_setting(ser, name):
     """シリンジポンプの設定を行う"""
@@ -267,54 +267,53 @@ def operation():
         
         if PassedTime >= next_v1A_time and iteration_v1A == iteration_v1C:
             next_v1A_time = next_p1A_time + valve_delay_1A
-            GPIO.setup(pin1, GPIO.LOW)
+            GPIO.output(pin1, GPIO.LOW)
             log_to_csv('Valve 1', 'Open')
             iteration_v1A += 1
 
         if PassedTime >= next_v1C_time and iteration_v1C < iteration_v1A:
             next_v1C_time = next_p1C_time + valve_delay_1C
-            GPIO.setup(pin1, GPIO.HIGH)
+            GPIO.output(pin1, GPIO.HIGH)
             log_to_csv('Valve1', 'Close')
             iteration_v1C += 1
 
         if PassedTime >= next_v2A_time and iteration_v2A == iteration_v2C:
             next_v2A_time = next_p2A_time + valve_delay_2A
-            GPIO.setup(pin2, GPIO.LOW)
+            GPIO.output(pin2, GPIO.LOW)
             log_to_csv('Valve 2', 'Open')
             iteration_v2A += 1
 
         if PassedTime >= next_v2C_time and iteration_v2C < iteration_v2A:
             next_v2C_time = next_p2C_time + valve_delay_2C
-            GPIO.setup(pin2, GPIO.HIGH)
+            GPIO.output(pin2, GPIO.HIGH)
             log_to_csv('Valve2', 'Close')
             iteration_v2C += 1
         
         if PassedTime >= next_v3A_time and iteration_v3A == iteration_v3C:
             next_v3A_time = next_p1A_time + valve_delay_3A
-            GPIO.setup(pin3, GPIO.LOW)
+            GPIO.output(pin3, GPIO.LOW)
             log_to_csv('Valve 3', 'Open')
             iteration_v3A += 1
 
         if PassedTime >= next_v3C_time and iteration_v3C < iteration_v3A:
             next_v3C_time = next_p1C_time + valve_delay_3C
-            GPIO.setup(pin3, GPIO.HIGH)
+            GPIO.output(pin3, GPIO.HIGH)
             log_to_csv('Valve3', 'Close')
             iteration_v3C += 1
                 
         if PassedTime >= next_v4A_time and iteration_v4A == iteration_v4C:
             next_v4A_time = next_p2A_time + valve_delay_4A
-            GPIO.setup(pin4, GPIO.LOW)
+            GPIO.output(pin4, GPIO.LOW)
             log_to_csv('Valve 4', 'Open')
             iteration_v4A += 1
 
         if PassedTime >= next_v4C_time and iteration_v4C < iteration_v4A:
             next_v4C_time = next_p2C_time + valve_delay_4C
-            GPIO.setup(pin4, GPIO.HIGH)
+            GPIO.output(pin4, GPIO.HIGH)
             log_to_csv('Valve4', 'Close')
             iteration_v4C += 1
         
-        
-        
+
         time.sleep(0.01)  # 0.01秒おきに実行
 
     send_command(ser1, 'STOP')
@@ -324,7 +323,6 @@ def operation():
     close_serial(ser1)
     close_serial(ser2)
     print("Serial connections closed.")
-
 
 # GUIセットアップ
 root = Tk()
@@ -415,14 +413,16 @@ status_label_4C = Label(root, text=f"Current valve 4 close delay: {valve_delay_4
 status_label_4C.pack()
 
 
-# GUIループの開始
-root.mainloop()
-
-
 # シリンジポンプ操作スレッドの開始
 operation_thread = threading.Thread(target=operation)
 operation_thread.start()
-operation_thread.join()
+
+
+# GUIループの開始
+root.mainloop()
 
 # 終了
+operation_thread.join()
+GPIO.cleanup()
+
 print("All threads have exited.")
