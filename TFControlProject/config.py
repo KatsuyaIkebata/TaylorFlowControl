@@ -1,0 +1,2 @@
+def operation():
+    print("Hello")
