@@ -40,10 +40,6 @@ def main():
     # Start the Tkinter main loop
     root.mainloop()
 
-    # 終了メッセージ表示
-    end_label = tk.Label(scrollable_frame, text="Operation Finished", font=("Helvetica", 16), fg="red")
-    end_label.pack(pady=20)
-
 if __name__ == "__main__":
     main()
 

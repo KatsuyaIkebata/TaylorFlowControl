@@ -58,6 +58,6 @@ def create_widgets(parent):
             status_label[i][j].grid(row=2*i+j, column=3, padx=10, pady=5, sticky="nw")
 
     # Example button to start the operation
-    start_button = tk.Button(parent, text="Start Operation", command=operation)
+    start_button = tk.Button(parent, text="Start Operation", command=lambda : operation(parent))
     start_button.grid(row=2*rows, column=0, columnspan=4, pady=10)
 

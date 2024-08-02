@@ -1,0 +1,83 @@
+Hour,Minute,Second,millisecond,Pump,Action
+15,39,12,346,Pump 0,"Set Diameter 29.2, response: 04:"
+15,39,12,447,Pump 0,"Set Infuse Rate 3 mL/min, response: 04:"
+15,39,12,549,Pump 0,"Set Diameter 29.2, response: :"
+15,39,12,650,Pump 0,"Set Infuse Rate 3 mL/min, response: :"
+15,39,12,651,Pump 0,Run
+15,39,12,651,Valve 0,Open
+15,39,12,753,Pump 0,Pump 0 Run Response: 04>
+15,39,13,158,Valve 2,Open
+15,39,17,408,Pump 0,Stop
+15,39,17,409,Pump 1,Run
+15,39,17,410,Valve 0,Close
+15,39,17,410,Valve 1,Open
+15,39,17,502,Pump 0,Pump 0 Stop Response: 04:
+15,39,17,503,Pump 1,Pump 1 Run Response: >
+15,39,17,907,Valve 3,Open
+15,39,18,403,Valve 2,Close
+15,39,25,328,Pump 1,Stop
+15,39,25,329,Pump 0,Run
+15,39,25,330,Valve 0,Open
+15,39,25,330,Valve 1,Close
+15,39,25,421,Pump 1,Pump 1 Stop Response: :
+15,39,25,422,Pump 0,Pump 0 Run Response: 04>
+15,39,25,827,Valve 2,Open
+15,39,26,322,Valve 3,Close
+15,39,30,76,Pump 0,Stop
+15,39,30,78,Pump 1,Run
+15,39,30,79,Valve 0,Close
+15,39,30,79,Valve 1,Open
+15,39,30,171,Pump 0,Pump 0 Stop Response: 04:
+15,39,30,171,Pump 1,Pump 1 Run Response: >
+15,39,30,575,Valve 3,Open
+15,39,31,70,Valve 2,Close
+15,39,37,995,Pump 1,Stop
+15,39,37,996,Pump 0,Run
+15,39,37,997,Valve 0,Open
+15,39,37,997,Valve 1,Close
+15,39,38,89,Pump 1,Pump 1 Stop Response: :
+15,39,38,89,Pump 0,Pump 0 Run Response: 04>
+15,39,38,494,Valve 2,Open
+15,39,38,989,Valve 3,Close
+15,39,42,743,Pump 0,Stop
+15,39,42,744,Pump 1,Run
+15,39,42,744,Valve 0,Close
+15,39,42,745,Valve 1,Open
+15,39,42,839,Pump 0,Pump 0 Stop Response: 04:
+15,39,42,839,Pump 1,Pump 1 Run Response: >
+15,39,43,243,Valve 3,Open
+15,39,43,739,Valve 2,Close
+15,39,50,654,Pump 1,Stop
+15,39,50,655,Pump 0,Run
+15,39,50,656,Valve 0,Open
+15,39,50,656,Valve 1,Close
+15,39,50,758,Pump 1,Pump 1 Stop Response: :
+15,39,50,759,Pump 0,Pump 0 Run Response: 04>
+15,39,51,162,Valve 2,Open
+15,39,51,657,Valve 3,Close
+15,39,55,414,Pump 0,Stop
+15,39,55,414,Pump 1,Run
+15,39,55,416,Valve 0,Close
+15,39,55,416,Valve 1,Open
+15,39,55,508,Pump 0,Pump 0 Stop Response: 04:
+15,39,55,508,Pump 1,Pump 1 Run Response: >
+15,39,55,912,Valve 3,Open
+15,39,56,407,Valve 2,Close
+15,40,3,330,Pump 1,Stop
+15,40,3,331,Pump 0,Run
+15,40,3,332,Valve 0,Open
+15,40,3,332,Valve 1,Close
+15,40,3,424,Pump 1,Pump 1 Stop Response: :
+15,40,3,424,Pump 0,Pump 0 Run Response: 04>
+15,40,3,829,Valve 2,Open
+15,40,4,324,Valve 3,Close
+15,40,8,80,Pump 0,Stop
+15,40,8,80,Pump 1,Run
+15,40,8,81,Valve 0,Close
+15,40,8,81,Valve 1,Open
+15,40,8,175,Pump 0,Pump 0 Stop Response: 04:
+15,40,8,175,Pump 1,Pump 1 Run Response: >
+15,40,8,579,Valve 3,Open
+15,40,9,77,Valve 2,Close
+15,40,12,661,Pump 0,Stop
+15,40,12,662,Pump 1,Stop

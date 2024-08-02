@@ -4,9 +4,10 @@ import math
 import time
 import RPi.GPIO as GPIO
 from datetime import datetime
+import tkinter as tk
 import global_value as g
 
-def operation():
+def operation(parent):
     # Settings
     TubeDiameterInch = 1/8   # inch チューブの内径
     SyringeDiameter = 29.2   # mm シリンジポンプの内径
@@ -37,7 +38,7 @@ def operation():
 
     # CSVファイルの設定
     current_time = datetime.now().strftime("%Y%m%d-%H%M")
-    csv_filename = f'../data/OperationLog-{current_time}.csv'
+    csv_filename = f'OperationLog-{current_time}.csv'
     csv_header = ['Hour', 'Minute', 'Second','millisecond', 'Pump', 'Action']
 
     # シリアルポートの設定
@@ -139,7 +140,7 @@ def operation():
         if PassedTime >= next_p0C_time and iteration_p0C < iteration_p0A:   
             send_command(ser0, 'STOP')
             log_to_csv('Pump 0', 'Stop')
-            print('PUMp0 STOP\n')
+            print('Pump0 STOP\n')
             iteration_p0C += 1
 
         if PassedTime >= next_p0D_time and iteration_p0D < iteration_p0A:   
@@ -150,7 +151,7 @@ def operation():
         if PassedTime >= next_p1C_time and iteration_p1C < iteration_p1A:   
             send_command(ser1, 'STOP')
             log_to_csv('Pump 1', 'Stop')
-            print('PUMp1 STOP\n')
+            print('Pump1 STOP\n')
             iteration_p1C += 1
 
         if PassedTime >= next_p1D_time and iteration_p1D < iteration_p1A:   
@@ -162,8 +163,10 @@ def operation():
             next_p0B_time = next_p0A_time + ResponseTime   # Aの押出開始後、応答時間が過ぎたら実行開始
             next_p0C_time = next_p0A_time + InfuseTime0    # ポンプ0の押出時間後に実行開始
             next_p0D_time = next_p0C_time + ResponseTime   # ポンプ0の停止後、応答時間が過ぎたら実行開始
-            next_v0A_time = next_p0A_time + g.delays[0][0] # ポンプ0の押出開始後、遅れ時間経過したらバルブ0を停止（開放）
-            next_v2A_time = next_p0A_time + g.delays[2][0] # ポンプ0の押出開始後、遅れ時間経過したらバルブ2を停止（開放）
+            next_v0A_time = next_p0A_time + g.delays[0][0] # ポンプ0の押出開始後、遅れ時間経過したらバルブ0を開放（電源OFF）
+            next_v0C_time = next_p0C_time + g.delays[0][1] # ポンプ0の停止後、遅れ時間経過したらバルブ0を閉鎖（電源ON）
+            next_v2A_time = next_p0A_time + g.delays[2][0] # ポンプ0の押出開始後、遅れ時間経過したらバルブ2を開放（電源OFF）
+            next_v2C_time = next_p0C_time + g.delays[2][1] # ポンプ0の停止後、遅れ時間経過したらバルブ2を閉鎖（電源ON）
             send_command(ser0, 'IRUN')
             log_to_csv('Pump 0', 'Run')
             print('PUMp0 RUN')
@@ -181,15 +184,16 @@ def operation():
             next_p1B_time = next_p1A_time + ResponseTime  # Bの押出開始後、応答時間が過ぎたら実行開始
             next_p1C_time = next_p1A_time + InfuseTime1   # ポンプ1の押出時間後に実行開始
             next_p1D_time = next_p1C_time + ResponseTime  # ポンプ1の停止後、応答時間が過ぎたら実行開始
-            next_v1A_time = next_p1A_time + g.delays[1][0] # ポンプ1の押出開始後、遅れ時間経過したらバルブ1を停止（開放）
-            next_v3A_time = next_p1A_time + g.delays[3][0] # ポンプ1の押出開始後、遅れ時間経過したらバルブ3を停止（開放）
-            send_command(ser0, 'IRUN')
+            next_v1A_time = next_p1A_time + g.delays[1][0] # ポンプ1の押出開始後、遅れ時間経過したらバルブ1を開放（電源OFF）
+            next_v1C_time = next_p1C_time + g.delays[1][1] # ポンプ1の停止後、遅れ時間経過したらバルブ1を閉鎖（電源ON）
+            next_v3A_time = next_p1A_time + g.delays[3][0] # ポンプ1の押出開始後、遅れ時間経過したらバルブ3を開放（電源OFF）
+            next_v3C_time = next_p1C_time + g.delays[3][1] # ポンプ1の停止後、遅れ時間経過したらバルブ3を閉鎖（電源ON)
             send_command(ser1, 'IRUN')
             log_to_csv('Pump 1', 'Run')
             print('PUMp1 RUN')
             iteration_p1A += 1
             print(f'Iteration of 2A: {iteration_p1A}')
-            next_p1A_time = InfuseTime0 * (iteration_p0A + 1) + InfuseTime1 * iteration_p1A  # プロセス2Aの次の実行時間を設定
+            next_p1A_time = InfuseTime0 * (iteration_p0A + 1) + InfuseTime1 * iteration_p1A  # プロセス1Aの次の実行時間を設定
             print(f'next_p1A_time: {next_p1A_time}')
 
         if PassedTime >= next_p1B_time and iteration_p1B < iteration_p1A:   
@@ -255,4 +259,8 @@ def operation():
     close_serial(ser0)
     close_serial(ser1)
     GPIO.cleanup()
+    
+    # 終了メッセージ表示
+    end_label = tk.Label(parent, text="Operation Finished", font=("Helvetica", 16), fg="red")
+    end_label.grid(row=len(g.delays)+1, column=0, columnspan=4, pady=10)
     print("Serial connections closed.")
