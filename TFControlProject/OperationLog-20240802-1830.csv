@@ -1,0 +1,43 @@
+Hour,Minute,Second,millisecond,Pump,Action
+18,30,31,228,Pump 0,"Set Diameter 29.2, response: 04:"
+18,30,31,328,Pump 0,"Set Infuse Rate 3 mL/min, response: 04:"
+18,30,31,429,Pump 0,"Set Diameter 29.2, response: :"
+18,30,31,530,Pump 0,"Set Infuse Rate 3 mL/min, response: :"
+18,30,31,530,Pump 0,Run
+18,30,31,531,Valve 0,Open
+18,30,31,531,Valve 2,Open
+18,30,31,632,Pump 0,Pump 0 Run Response: 04>
+18,30,36,283,Pump 0,Stop
+18,30,36,284,Pump 1,Run
+18,30,36,285,Valve 0,Close
+18,30,36,285,Valve 1,Open
+18,30,36,285,Valve 2,Close
+18,30,36,389,Pump 0,Pump 0 Stop Response: 04:
+18,30,36,389,Pump 1,Pump 1 Run Response: >
+18,30,36,490,Valve 3,Open
+18,30,44,205,Pump 1,Stop
+18,30,44,206,Pump 0,Run
+18,30,44,206,Valve 0,Open
+18,30,44,207,Valve 1,Close
+18,30,44,207,Valve 2,Open
+18,30,44,207,Valve 3,Close
+18,30,44,298,Pump 1,Pump 1 Stop Response: :
+18,30,44,299,Pump 0,Pump 0 Run Response: 04>
+18,30,48,954,Pump 0,Stop
+18,30,48,955,Pump 1,Run
+18,30,48,956,Valve 0,Close
+18,30,48,956,Valve 1,Open
+18,30,48,956,Valve 2,Close
+18,30,49,50,Pump 0,Pump 0 Stop Response: 04:
+18,30,49,50,Pump 1,Pump 1 Run Response: >
+18,30,49,151,Valve 3,Open
+18,30,56,874,Pump 1,Stop
+18,30,56,875,Pump 0,Run
+18,30,56,876,Valve 0,Open
+18,30,56,877,Valve 1,Close
+18,30,56,877,Valve 2,Open
+18,30,56,877,Valve 3,Close
+18,30,56,969,Pump 1,Pump 1 Stop Response: :
+18,30,56,969,Pump 0,Pump 0 Run Response: 04>
+18,31,1,536,Pump 0,Stop
+18,31,1,536,Pump 1,Stop

@@ -12,7 +12,7 @@ def operation(parent):
     TubeDiameterInch = 1/8   # inch チューブの内径
     SyringeDiameter = 29.2   # mm シリンジポンプの内径
     TotalRate = 3            # mL/min 合計流量
-    TotalTime = 1            # min 合計時間
+    TotalTime = 0.5            # min 合計時間
     AlarmTime = 0.5          # min アラームが鳴る時間
     SlugLength0 = 30          # mm スラグ0の長さ(実際は少しずれる)
     SlugLength1 = 50         # mm スラグ1の長さ(実際は少しずれる)
@@ -262,5 +262,5 @@ def operation(parent):
     
     # 終了メッセージ表示
     end_label = tk.Label(parent, text="Operation Finished", font=("Helvetica", 16), fg="red")
-    end_label.grid(row=len(g.delays)+1, column=0, columnspan=4, pady=10)
+    end_label.grid(row=len(g.delays)*2+1, column=0, columnspan=4, pady=10)
     print("Serial connections closed.")

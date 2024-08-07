@@ -5,3 +5,4 @@
 [3][1]: バルブ3の閉鎖(電源ON)
 '''
 delays = [[0.0 for _ in range(2)] for _ in range(4)]
+

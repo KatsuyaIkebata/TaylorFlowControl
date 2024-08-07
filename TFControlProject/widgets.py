@@ -1,3 +1,4 @@
+import threading
 import tkinter as tk
 from config import operation
 import global_value as g
@@ -36,6 +37,11 @@ def create_widgets(parent):
         else:
             return "Error"
 
+    def start_operation(parent):
+        '''シリンジポンプ操作スレッドの開始'''
+        new_thread = threading.Thread(target=operation(parent))
+        new_thread.start()    
+
 
     rows = len(g.delays)       # 4
     columns = len(g.delays[0]) # 2
@@ -57,7 +63,11 @@ def create_widgets(parent):
             status_label[i][j] = tk.Label(parent, text=f"Current value: {g.delays[i][j]} seconds")
             status_label[i][j].grid(row=2*i+j, column=3, padx=10, pady=5, sticky="nw")
 
-    # Example button to start the operation
-    start_button = tk.Button(parent, text="Start Operation", command=lambda : operation(parent))
+    # Start the operation
+    start_button = tk.Button(parent, text="Start Operation", command=lambda : start_operation(parent))
     start_button.grid(row=2*rows, column=0, columnspan=4, pady=10)
+
+    # # End the operation
+    # end_button = tk.Button(parent, text="End Operation", command=lambda : threading.Thread(target=operation(parent)))
+    # end_button.grid(row=2*rows + i, column=0, columnspan=4, pady=10)
 

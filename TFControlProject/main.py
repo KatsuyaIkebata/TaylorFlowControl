@@ -7,6 +7,7 @@ import global_value as g
 def main():
     root = tk.Tk()
     root.title("Taylor Flow Controller")
+    root.geometry("800x400")
 
     # Frame to hold canvas and scrollbars
     frame = ttk.Frame(root)
