@@ -1,21 +1,12 @@
 import tkinter as tk
 from tkinter import ttk
 from interface import Interface
-from operation_manager import Operation
+from operation_manager import OperationClass
+from pump import PumpClass
+from valve import ValveClass
+
 
 def main():
-    def settings(NewOpe):
-        # Settings
-        NewOpe.tube_diameter_inch = 1/8    # inch チューブの内径
-        NewOpe.syringe_diameter = 29.2    # mm シリンジポンプの内径
-        NewOpe.total_rate = 3             # mL/min 合計流量
-        NewOpe.total_time = 1             # min 合計時間
-        NewOpe.alarm_time = 0.5           # min アラームが鳴る時間
-        NewOpe.slug_length1 = 30          # mm スラグ1の長さ(実際は少しずれる)
-        NewOpe.slug_length2 = 50          # mm スラグ2の長さ(実際は少しずれる)
-        NewOpe.response_time = 0.1        # s 応答を待つ時間
-
-
     def create_app():
         root = tk.Tk()
         root.title("Taylor Flow Controller")
@@ -47,18 +38,23 @@ def main():
         frame.pack(fill="both", expand=True)
 
         return root, scrollable_frame
-            
-    gpio_pin = [6, 13, 19, 26]
-    serial_port = ['/dev/ttyACM0', '/dev/ttyACM1']
-    config = {
-        "pump_num": 2,
-        "valve_num": 4,
-        "gpio_pins": [6, 13, 19, 26],
-        "serial_ports": ['/dev/ttyUSB0', '/dev/ttyUSB1'],
-        "baudrate": 115200
-    }
-    NewOpe = Operation(config)
-    settings(NewOpe)
+    
+    # 設定
+    config = OperationClass.Config(
+        tube_diameter_inch = 1/8,    # inch チューブの内径
+        syringe_diameter = 29.2,    # mm シリンジポンプの内径
+        total_rate = 3,             # mL/min 合計流量
+        total_time = 1,             # min 合計時間
+        alarm_time = 0.5,           # min アラームが鳴る時間
+        slug_length0 = 30,          # mm スラグ1の長さ(実際は少しずれる)
+        slug_length1 = 50,          # mm スラグ2の長さ(実際は少しずれる)
+        response_time = 0.1,        # s 応答を待つ時間
+        pump_num = 2,               # ポンプの数
+        valve_num = 4,              # バルブの数
+        gpio_pin = [6, 13, 19, 26], # BCM番号でGPIOピンを指定       
+        serial_port = ['/dev/ttyACM0', '/dev/ttyACM1'] # シリンジポンプをつないだシリアルポート
+    )
+    NewOpe = OperationClass(config)
     root, scrollable_frame = create_app()
     Monitor = Interface(master=scrollable_frame, Operation=NewOpe)
     root.mainloop()

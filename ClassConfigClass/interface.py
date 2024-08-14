@@ -1,5 +1,5 @@
 import tkinter as tk
-from operation_manager import Operation
+from operation_manager import OperationClass
 
 class Interface:
     def __init__(self, master, Operation):
