@@ -1,0 +1,87 @@
+Hour,Minute,Second,millisecond,Device,DeviceNumAction
+15,58,15,232,Pump 0,Response: :
+15,58,15,333,Pump 0,Response: :
+15,58,15,434,Pump 1,Response: :
+15,58,15,535,Pump 1,Response: :
+15,58,15,536,Pump 0,infuse
+15,58,15,536,valve 0,open
+15,58,15,536,valve 2,open
+15,58,15,638,Pump 0,Response: :
+15,58,20,291,Pump 0,stop
+15,58,20,291,Pump 1,infuse
+15,58,20,292,valve 0,close
+15,58,20,292,valve 1,open
+15,58,20,292,valve 2,close
+15,58,20,393,Pump 0,Response: :
+15,58,20,393,Pump 1,Response: :
+15,58,20,393,valve 3,open
+15,58,28,205,Pump 1,stop
+15,58,28,206,Pump 0,infuse
+15,58,28,207,valve 0,open
+15,58,28,207,valve 1,close
+15,58,28,207,valve 2,open
+15,58,28,313,Pump 1,Response: :
+15,58,28,314,Pump 0,Response: :
+15,58,28,314,valve 3,close
+15,58,32,960,Pump 0,stop
+15,58,32,961,Pump 1,infuse
+15,58,32,961,valve 0,close
+15,58,32,961,valve 1,open
+15,58,32,962,valve 2,close
+15,58,33,56,Pump 0,Response: :
+15,58,33,57,Pump 1,Response: :
+15,58,33,57,valve 3,open
+15,58,40,876,Pump 1,stop
+15,58,40,876,Pump 0,infuse
+15,58,40,877,valve 0,open
+15,58,40,877,valve 1,close
+15,58,40,877,valve 2,open
+15,58,40,979,Pump 1,Response: :
+15,58,40,980,Pump 0,Response: :
+15,58,40,980,valve 3,close
+15,58,45,623,Pump 0,stop
+15,58,45,623,Pump 1,infuse
+15,58,45,624,valve 0,close
+15,58,45,624,valve 1,open
+15,58,45,624,valve 2,close
+15,58,45,726,Pump 0,Response: :
+15,58,45,727,Pump 1,Response: :
+15,58,45,727,valve 3,open
+15,58,53,544,Pump 1,stop
+15,58,53,545,Pump 0,infuse
+15,58,53,546,valve 0,open
+15,58,53,546,valve 1,close
+15,58,53,547,valve 2,open
+15,58,53,644,Pump 1,Response: :
+15,58,53,644,Pump 0,Response: :
+15,58,53,644,valve 3,close
+15,58,58,289,Pump 0,stop
+15,58,58,290,Pump 1,infuse
+15,58,58,291,valve 0,close
+15,58,58,291,valve 1,open
+15,58,58,291,valve 2,close
+15,58,58,393,Pump 0,Response: :
+15,58,58,394,Pump 1,Response: :
+15,58,58,394,valve 3,open
+15,59,6,215,Pump 1,stop
+15,59,6,215,Pump 0,infuse
+15,59,6,216,valve 0,open
+15,59,6,216,valve 1,close
+15,59,6,216,valve 2,open
+15,59,6,307,Pump 1,Response: :
+15,59,6,308,Pump 0,Response: :
+15,59,6,308,valve 3,close
+15,59,10,963,Pump 0,stop
+15,59,10,964,Pump 1,infuse
+15,59,10,965,valve 0,close
+15,59,10,965,valve 1,open
+15,59,10,966,valve 2,close
+15,59,11,60,Pump 0,Response: :
+15,59,11,60,Pump 1,Response: :
+15,59,11,60,valve 3,open
+15,59,15,542,Pump 0,stop
+15,59,15,548,Pump 1,stop
+15,59,15,555,valve 0,open
+15,59,15,555,valve 1,open
+15,59,15,556,valve 2,open
+15,59,15,556,valve 3,open

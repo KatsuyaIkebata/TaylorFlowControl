@@ -1,0 +1,39 @@
+import serial
+import time
+from write_csv import CSVClass 
+
+class PumpClass:
+    def __init__(self, id):
+        self.id = id
+
+    def setting(self, Operation):
+        self.send_command(f'DIAMETER {Operation.config.syringe_diameter}')
+        time.sleep(0.1)
+        self.receive_command(Operation)
+
+        self.send_command(f'IRATE {Operation.config.total_rate} m/m')
+        time.sleep(0.1)
+        self.receive_command(Operation)  
+
+    def infuse(self, Operation):
+        self.send_command('RUN')
+        Operation.NewCSV.log(f'Pump {self.id}', 'infuse')
+        print(f"Infusing from pump {self.id}")
+
+    def stop(self, Operation):
+        self.send_command('STOP')
+        Operation.NewCSV.log(f'Pump {self.id}', 'stop')
+        print(f"pump {self.id} stop")
+
+    def send_command(self, command):
+        """シリンジポンプにコマンドを送信する"""
+        command += '\r\n'
+        self.ser.write(command.encode()) 
+
+    def receive_command(self, Operation):
+        response = self.ser.read(self.ser.in_waiting or 1).decode().strip()
+        Operation.NewCSV.log(f'Pump {self.id}', f'Response: {response}')
+
+    def end(self, Operation):
+        self.stop(Operation)
+        self.ser.close()
