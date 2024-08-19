@@ -20,7 +20,7 @@ Valve 0 Open delay from pump0 infuse: 0.0
 Valve 0 Close delay from pump0 stop: 0.0
 Valve 1 Open delay from pump1 infuse: 0.0
 Valve 1 Close delay from pump1 stop: 0.0
-Valve 2 Open delay from pump2 infuse: 0.2
-Valve 2 Close delay from pump2 stop: 0.2
-Valve 3 Open delay from pump3 infuse: 0.0
+Valve 2 Open delay from pump2 infuse: 0.0
+Valve 2 Close delay from pump2 stop: 0.0
+Valve 3 Open delay from pump3 infuse: 0.2
 Valve 3 Close delay from pump3 stop: 0.0

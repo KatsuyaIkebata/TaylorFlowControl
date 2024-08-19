@@ -49,11 +49,13 @@ class OperationClass:
         self.delays = [[0.0 for _ in range(2)] for _ in range(self.config.valve_num)]
 
         self.calculations()
-        if self.config.valve_num == 4 and self.config.pump_num == 2 :
-            self.Timing = TimingClass_4_2(self.config, self.delays)
-            self.Iteration = IterationClass_4_2()
-        else:
-            print("他のバルブとポンプ数でのoperationクラスを作成してください")
+        # if self.config.valve_num == 4 and self.config.pump_num == 2 :
+        #     self.Timing = TimingClass_4_2(self.config, self.delays)
+        #     self.Iteration = IterationClass_4_2()
+        # else:
+        #     print("他のバルブとポンプ数でのoperationクラスを作成してください")
+        self.Timing = TimingClass_4_2(self.config, self.delays)
+        self.Iteration = IterationClass_4_2()
 
     def calculations(self):
         self.config.TubeDiameter = 25.4 * self.config.tube_diameter_inch                               # inchからmmへ
@@ -80,16 +82,15 @@ class OperationClass:
         self.end_time = self.start_time + self.config.total_time * 60
         self.passed_time = 0 
 
-        self.calculations()
-
-        if self.config.valve_num == 4 and self.config.pump_num == 2 :
-            self.RunOpe = RunOpeClass_4_2.operation_4_2
-        else:
-            print("他のバルブとポンプ数でのoperationクラスを作成してください")
+        # if self.config.valve_num == 4 and self.config.pump_num == 2 :
+        #     self.RunOpe = RunOpeClass_4_2.operation_4_2
+        # else:
+        #     print("他のバルブとポンプ数でのoperationクラスを作成してください")
 
         while time.time() < self.end_time:
             self.passed_time = time.time() - self.start_time 
-            self.RunOpe(self)
+            # self.RunOpe(self)
+            RunOpeClass_4_2.operation_4_2(self)
             time.sleep(0.01)  # 0.01秒おきに実行
             
         self.stop()
