@@ -1,3 +1,5 @@
+import serial
+
 class TimingClass_4_2:
     def __init__(self, config, delays):
         self.p0A = 0  # 0秒後に実行開始
@@ -15,7 +17,7 @@ class TimingClass_4_2:
         self.v2A = self.p0A + delays[2][0]    # ポンプ0の停止後、遅れ時間経過した後、バルブ2を稼働（閉鎖）
         self.v2C = self.p0C + delays[2][1]    # ポンプ0の押出後、遅れ時間経過した後、バルブ2を停止（開放）
         self.v3A = self.p1A + delays[3][0]    # ポンプ1の停止後、遅れ時間経過した後、バルブ3を稼働（閉鎖）
-        self.v3C = self.p1C + delays[3][1]    # ポンプ1の押出後、遅れ時間経過した後、バルブ3を停止
+        self.v3C = self.p1C + delays[3][1]    # ポンプ1の押出後、遅れ時間経過した後、バルブ3を停止（開放）
 
 class IterationClass_4_2:
     def __init__(self):
@@ -91,6 +93,7 @@ class RunOpeClass_4_2:
         if Operation.passed_time >= Operation.Timing.p1B and Operation.Iteration.p1B < Operation.Iteration.p1A:   
             Operation.Pump[1].receive_command(Operation)
             Operation.Iteration.p1B += 1
+
         
         if Operation.passed_time >= Operation.Timing.v0A and Operation.Iteration.v0A == Operation.Iteration.v0C:
             Operation.Valve[0].open(Operation)

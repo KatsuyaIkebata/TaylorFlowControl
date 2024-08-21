@@ -1,0 +1,43 @@
+Hour,Minute,Second,millisecond,Pump,Action
+15,29,35,992,Pump 1,"Set Diameter 29.2, response: "
+15,29,37,94,Pump 1,"Set Infuse Rate 3 mL/min, response: "
+15,29,37,195,Pump 2,"Set Diameter 29.2, response: :"
+15,29,37,295,Pump 2,"Set Infuse Rate 3 mL/min, response: :"
+15,29,37,296,Pump 1,Run
+15,29,38,398,Pump 1,Pump 1 Run Response: 
+15,29,38,409,Pump 1,Stop
+15,29,38,410,Pump 1,Pump 1 Stop Response: P
+15,29,38,410,Pump 2,Run
+15,29,38,411,Pump 2,Pump 2 Run Response: 
+15,29,39,198,Pump 2,Stop
+15,29,39,198,Pump 1,Run
+15,29,39,301,Pump 2,"Pump 2 Stop Response: >
+:"
+15,29,40,302,Pump 1,Pump 1 Run Response: 
+15,29,40,313,Pump 1,Stop
+15,29,41,315,Pump 1,Pump 1 Stop Response: 
+15,29,41,316,Pump 2,Run
+15,29,41,317,Pump 2,Pump 2 Run Response: 
+15,29,41,328,Pump 2,Stop
+15,29,41,329,Pump 2,Pump 2 Stop Response: >
+15,29,41,330,Pump 1,Run
+15,29,41,330,Pump 1,Pump 1 Run Response: N
+15,29,41,423,Pump 1,Stop
+15,29,41,423,Pump 2,Run
+15,29,42,516,Pump 1,Pump 1 Stop Response: 
+15,29,42,517,Pump 2,"Pump 2 Run Response: :
+>"
+15,29,43,3,Pump 2,Stop
+15,29,43,4,Pump 1,Run
+15,29,43,106,Pump 2,Pump 2 Stop Response: :
+15,29,44,108,Pump 1,Pump 1 Run Response: 
+15,29,44,119,Pump 1,Stop
+15,29,44,120,Pump 1,Pump 1 Stop Response: :
+15,29,44,121,Pump 2,Run
+15,29,44,123,Pump 2,Pump 2 Run Response: 
+15,29,44,901,Pump 2,Stop
+15,29,44,903,Pump 1,Run
+15,29,45,6,Pump 2,"Pump 2 Stop Response: >
+:"
+15,29,46,7,Pump 1,Pump 1 Run Response: 
+15,29,46,19,Pump 1,Stop

@@ -36,6 +36,7 @@ class OperationClass:
         self.Pump = [PumpClass(i) for i in range(self.config.pump_num)]
         for i in range(len(self.config.serial_port)):
             self.Pump[i].ser = serial.Serial(port=self.config.serial_port[i], baudrate=self.config.baudrate, timeout=1)
+            print(f'シリアルオープン判定: ポンプ{self.Pump[i].id}: {self.Pump[i].ser.is_open}')
 
         GPIO.setmode(GPIO.BCM)  # BCM番号でGPIOピンを指定
         GPIO.setup(self.config.gpio_pin, GPIO.OUT)  # GPIOピンを出力モードに設定
@@ -82,18 +83,18 @@ class OperationClass:
         self.end_time = self.start_time + self.config.total_time * 60
         self.passed_time = 0 
 
-        # if self.config.valve_num == 4 and self.config.pump_num == 2 :
-        #     self.RunOpe = RunOpeClass_4_2.operation_4_2
-        # else:
-        #     print("他のバルブとポンプ数でのoperationクラスを作成してください")
+        if self.config.valve_num == 4 and self.config.pump_num == 2 :
+            self.RunOpe = RunOpeClass_4_2.operation_4_2
+        else:
+            print("他のバルブとポンプ数でのoperationクラスを作成してください")
 
-        while time.time() < self.end_time:
+        while time.time() < self.end_time and self.status == True:
             self.passed_time = time.time() - self.start_time 
-            # self.RunOpe(self)
-            RunOpeClass_4_2.operation_4_2(self)
+            self.RunOpe(self)
             time.sleep(0.01)  # 0.01秒おきに実行
             
         self.stop()
+        print("Operation stopped.")
 
     def stop(self):
         # 停止時の挙動  

@@ -9,7 +9,7 @@ from datetime import datetime
 TubeDiameterInch = 1/8   # inch チューブの内径
 SyringeDiameter = 29.2   # mm シリンジポンプの内径
 TotalRate = 3            # mL/min 合計流量
-TotalTime = 2            # min 合計時間
+TotalTime = 1            # min 合計時間
 AlarmTime = 0.5          # min アラームが鳴る時間
 SlugLength1 = 2          # mm スラグ1の長さ(実際は少しずれる)
 SlugLength2 = 10         # mm スラグ2の長さ(実際は少しずれる)
@@ -43,8 +43,8 @@ csv_filename = f'OperationLog-{current_time}.csv'
 csv_header = ['Hour', 'Minute', 'Second','millisecond', 'Pump', 'Action']
 
 # シリアルポートの設定
-ser1 = serial.Serial(port='COM6', baudrate=115200, timeout=1)
-ser2 = serial.Serial(port='COM7', baudrate=115200, timeout=1)
+ser1 = serial.Serial(port='/dev/ttyACM0', baudrate=115200, timeout=1)
+ser2 = serial.Serial(port='/dev/ttyACM1', baudrate=115200, timeout=1)
 
 def pump_setting(ser, name):
     """シリンジポンプの設定を行う"""
@@ -67,6 +67,7 @@ def receive_command(ser):
     """シリンジポンプから応答を受け取る"""
     response = ser.read(ser.in_waiting or 1).decode().strip()
     return response
+    
 
 def close_serial(ser):
     """シリアルポートを閉じる"""

@@ -1,0 +1,19 @@
+Hour,Minute,Second,millisecond,Pump,Action
+14,53,41,752,Pump 1,"Set Diameter 29.2, response: :"
+14,53,41,853,Pump 1,"Set Infuse Rate 3 mL/min, response: :"
+14,53,41,954,Pump 2,"Set Diameter 29.2, response: :"
+14,53,42,55,Pump 2,"Set Infuse Rate 3 mL/min, response: :"
+14,53,42,56,Pump 1,Run
+14,53,42,157,Pump 1,Pump 1 Run Response: >
+14,53,42,380,Pump 1,Stop
+14,53,42,380,Pump 2,Run
+14,53,42,482,Pump 1,Pump 1 Stop Response: :
+14,53,42,482,Pump 2,Pump 2 Run Response: >
+14,53,43,963,Pump 2,Stop
+14,53,43,964,Pump 1,Run
+14,53,44,65,Pump 2,Pump 2 Stop Response: :
+14,53,44,66,Pump 1,Pump 1 Run Response: >
+14,53,44,279,Pump 1,Stop
+14,53,44,279,Pump 2,Run
+14,53,44,381,Pump 1,Pump 1 Stop Response: :
+14,53,44,381,Pump 2,Pump 2 Run Response: >

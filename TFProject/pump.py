@@ -16,7 +16,7 @@ class PumpClass:
         self.receive_command(Operation)  
 
     def infuse(self, Operation):
-        self.send_command('RUN')
+        self.send_command('IRUN')
         Operation.NewCSV.log(f'Pump {self.id}', 'infuse')
         print(f"Infusing from pump {self.id}")
 
@@ -29,10 +29,14 @@ class PumpClass:
         """シリンジポンプにコマンドを送信する"""
         command += '\r\n'
         self.ser.write(command.encode()) 
+        # print(f'pump {self.id} {command}: {self.ser}')
+
 
     def receive_command(self, Operation):
         response = self.ser.read(self.ser.in_waiting or 1).decode().strip()
         Operation.NewCSV.log(f'Pump {self.id}', f'Response: {response}')
+        # print(f'pump {self.id} response: {response}: {self.ser}')
+
 
     def end(self, Operation):
         self.stop(Operation)

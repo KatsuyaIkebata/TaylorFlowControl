@@ -1,6 +1,7 @@
 import tkinter as tk
 from operation_manager import OperationClass
 from judge_on_off import JudgeClass
+import threading
 
 class Interface:
     def __init__(self, master, Operation):
@@ -28,6 +29,8 @@ class Interface:
         self.startbutton.grid(row=2*self.rows, column=0, columnspan=2, pady=10)
         self.stopbutton = tk.Button(master, text="Stop", command=lambda : self.stop_operation(Operation))
         self.stopbutton.grid(row=2*self.rows, column=2, columnspan=2, pady=10)
+        
+        self.operation_thread = threading.Thread(target=Operation.run)
 
     def update_delay(self, master, i, j, Operation):
         '''バルブ1の開放開始時間の更新'''
@@ -49,13 +52,12 @@ class Interface:
             # シリンジポンプ操作スレッドの開始
             Operation.status = True
             print("operation starting")
-            Operation.run()
+            self.operation_thread.start()
 
 
     def stop_operation(self, Operation):
         if Operation.status == True:
             # シリンジポンプ操作スレッドの停止
             Operation.status = False
-            print("operation stopping")
-            Operation.stop()
+            self.operation_thread.join()  # スレッドの終了を待つ
 
