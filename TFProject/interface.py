@@ -29,8 +29,6 @@ class Interface:
         self.startbutton.grid(row=2*self.rows, column=0, columnspan=2, pady=10)
         self.stopbutton = tk.Button(master, text="Stop", command=lambda : self.stop_operation(Operation))
         self.stopbutton.grid(row=2*self.rows, column=2, columnspan=2, pady=10)
-        
-        self.operation_thread = threading.Thread(target=Operation.run)
 
     def update_delay(self, master, i, j, Operation):
         '''バルブ1の開放開始時間の更新'''
@@ -47,7 +45,8 @@ class Interface:
         else:
             return "Error"
     
-    def start_operation(self, Operation):
+    def start_operation(self, Operation):                
+        self.operation_thread = threading.Thread(target=Operation.run)
         if Operation.status == False:
             # シリンジポンプ操作スレッドの開始
             Operation.status = True
@@ -60,4 +59,5 @@ class Interface:
             # シリンジポンプ操作スレッドの停止
             Operation.status = False
             self.operation_thread.join()  # スレッドの終了を待つ
+
 

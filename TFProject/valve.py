@@ -9,12 +9,12 @@ class ValveClass:
 
     def open(self, Operation):
         GPIO.output(self.pin, GPIO.LOW)
-        Operation.NewCSV.log(f'valve {self.id}', 'open')
+        Operation.logCSV(f'valve {self.id}', 'open')
         print(f"Opening valve {self.id}")
 
     def close(self, Operation):
         GPIO.output(self.pin, GPIO.HIGH)
-        Operation.NewCSV.log(f'valve {self.id}', 'close')
+        Operation.logCSV(f'valve {self.id}', 'close')
         print(f"Closing valve {self.id}")
 
     def end(self, Operation):

@@ -36,7 +36,7 @@ class OperationClass:
         self.Pump = [PumpClass(i) for i in range(self.config.pump_num)]
         for i in range(len(self.config.serial_port)):
             self.Pump[i].ser = serial.Serial(port=self.config.serial_port[i], baudrate=self.config.baudrate, timeout=1)
-            print(f'シリアルオープン判定: ポンプ{self.Pump[i].id}: {self.Pump[i].ser.is_open}')
+            print(f'pump{self.Pump[i].id}: {self.config.serial_port[i]}, status: {self.Pump[i].ser.is_open}')
 
         GPIO.setmode(GPIO.BCM)  # BCM番号でGPIOピンを指定
         GPIO.setup(self.config.gpio_pin, GPIO.OUT)  # GPIOピンを出力モードに設定
@@ -65,13 +65,18 @@ class OperationClass:
         self.config.Volume1 = self.config.slug_length1 * self.config.TubeDiameter * self.config.TubeDiameter * math.pi * 0.25 # mm3 スラグ1の体積
         self.config.infuse_time1 = self.config.Volume1 / self.config.total_rate * 60 * 0.001                       # s ポンプ1を押し出す秒数
 
+    def logCSV(self, device, action):
+        try:
+            self.NewCSV.log(device, action)
+        except AttributeError:
+            print("NewCSV is not defined on Operation.")
 
     def run(self):   
         # csvファイルを作る
         current_time = datetime.now().strftime("%Y%m%d-%H%M")
-        csv_name = f'OperationLog-{current_time}.csv'
+        csv_name = f'../data/OperationLog-{current_time}.csv'
         self.NewCSV = CSVClass(csv_name)
-        txt_name = f'FinalSetting-{current_time}.txt'
+        txt_name = f'../data/FinalSetting-{current_time}.txt'
         self.NewTxt = TxtClass(txt_name)
 
         # シリンジポンプの設定

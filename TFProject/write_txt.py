@@ -15,8 +15,5 @@ class TxtClass:
             for j in range(2):
                 self.write(f"Valve {i} {JudgeClass.OpenClose(j)} delay from pump{i} {JudgeClass.InfuseStop(j)}: {Operation.delays[i][j]}")
         self.file.close()
-    
-    def __del__(self):
-        self.file.close()
 
     

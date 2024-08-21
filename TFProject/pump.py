@@ -17,13 +17,14 @@ class PumpClass:
 
     def infuse(self, Operation):
         self.send_command('IRUN')
-        Operation.NewCSV.log(f'Pump {self.id}', 'infuse')
+        Operation.logCSV(f'pump {self.id}', 'infuse')
         print(f"Infusing from pump {self.id}")
 
     def stop(self, Operation):
         self.send_command('STOP')
-        Operation.NewCSV.log(f'Pump {self.id}', 'stop')
+        Operation.logCSV(f'pump {self.id}', 'stop')
         print(f"pump {self.id} stop")
+
 
     def send_command(self, command):
         """シリンジポンプにコマンドを送信する"""

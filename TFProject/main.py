@@ -57,8 +57,8 @@ def main():
     root, scrollable_frame = create_app()
     Monitor = Interface(master=scrollable_frame, Operation=NewOpe)
     root.mainloop()
+    NewOpe.status = False
     NewOpe.end()
-    Monitor.operation_thread.join()
 
 if __name__ == "__main__":
     main()
