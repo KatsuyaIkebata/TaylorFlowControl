@@ -39,13 +39,13 @@ def main():
     # 設定
     
     config = OperationClass.Config(
-        tube_diameter_inch = 1/8,    # inch チューブの内径
-        syringe_diameter = 29.2,    # mm シリンジポンプの内径
-        total_rate = 3,             # mL/min 合計流量
-        total_time = 1,             # min 合計時間
+        tube_diameter = 1.58,       # mm チューブの内径
+        syringe_diameter = 34.5,    # mm シリンジポンプの内径
+        total_rate = 5,             # mL/min 合計流量
+        total_time = 10,             # min 合計時間
         alarm_time = 0.5,           # min アラームが鳴る時間
-        slug_length0 = 30,          # mm スラグ1の長さ(実際は少しずれる)
-        slug_length1 = 50,          # mm スラグ2の長さ(実際は少しずれる)
+        slug_length0 = 10,          # mm スラグ1の長さ(実際は少しずれる)
+        slug_length1 = 20,          # mm スラグ2の長さ(実際は少しずれる)
         response_time = 0.1,        # s 応答を待つ時間
         pump_num = 2,               # ポンプの数
         valve_num = 4,              # バルブの数

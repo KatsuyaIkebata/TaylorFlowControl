@@ -15,13 +15,13 @@ from operation_4_2 import TimingClass_4_2, IterationClass_4_2, RunOpeClass_4_2
 class OperationClass:
     @dataclass
     class Config:
-        tube_diameter_inch: float = 1/8   # inch チューブの内径
-        syringe_diameter: float = 29.2   # mm シリンジポンプの内径
-        total_rate: float = 3            # mL/min 合計流量
+        tube_diameter: float = 1.58      # mm チューブの内径
+        syringe_diameter: float = 34.5   # mm シリンジポンプの内径
+        total_rate: float = 1            # mL/min 合計流量
         total_time: float = 1            # min 合計時間
         alarm_time: float = 0.5          # min アラームが鳴る時間
-        slug_length0: float = 30         # スラグ0の長さ(実際は少しずれる)
-        slug_length1: float = 50         # mm スラグ1の長さ(実際は少しずれる)
+        slug_length0: float = 10         # スラグ0の長さ(実際は少しずれる)
+        slug_length1: float = 10         # mm スラグ1の長さ(実際は少しずれる)
         response_time: float = 0.1       # s 応答を待つ時間
         pump_num: int = 2,               # ポンプの数
         valve_num: int = 4,              # バルブの数
@@ -59,10 +59,9 @@ class OperationClass:
         self.Iteration = IterationClass_4_2()
 
     def calculations(self):
-        self.config.TubeDiameter = 25.4 * self.config.tube_diameter_inch                               # inchからmmへ
-        self.config.Volume0 = self.config.slug_length0 * self.config.TubeDiameter* self.config.TubeDiameter * math.pi * 0.25 # mm3 スラグ0の体積
+        self.config.Volume0 = self.config.slug_length0 * self.config.tube_diameter* self.config.tube_diameter * math.pi * 0.25 # mm3 スラグ0の体積
         self.config.infuse_time0 = self.config.Volume0 / self.config.total_rate * 60 * 0.001                       # s ポンプ0を押し出す秒数
-        self.config.Volume1 = self.config.slug_length1 * self.config.TubeDiameter * self.config.TubeDiameter * math.pi * 0.25 # mm3 スラグ1の体積
+        self.config.Volume1 = self.config.slug_length1 * self.config.tube_diameter * self.config.tube_diameter * math.pi * 0.25 # mm3 スラグ1の体積
         self.config.infuse_time1 = self.config.Volume1 / self.config.total_rate * 60 * 0.001                       # s ポンプ1を押し出す秒数
 
     def logCSV(self, device, action):
