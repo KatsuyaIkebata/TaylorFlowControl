@@ -16,12 +16,12 @@ class PumpClass:
         self.receive_command(Operation)  
 
     def infuse(self, Operation):
-        self.send_command('IRUN')
+        self.send_command('RUN')
         Operation.logCSV(f'pump {self.id}', 'infuse')
         print(f"Infusing from pump {self.id}")
 
     def stop(self, Operation):
-        self.send_command('STOP')
+        self.send_command('STP')
         Operation.logCSV(f'pump {self.id}', 'stop')
         print(f"pump {self.id} stop")
 

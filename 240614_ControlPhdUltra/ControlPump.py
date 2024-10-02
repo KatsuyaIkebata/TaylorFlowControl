@@ -3,7 +3,7 @@ import time
 
 # Set up the serial connection
 ser = serial.Serial(
-    port='COM6',         # Replace with your actual COM port
+    port='/dev/ttyACM0',         # Replace with your actual COM port
     baudrate=115200,     # Baud rate
     timeout=1            # Timeout for read
 )
