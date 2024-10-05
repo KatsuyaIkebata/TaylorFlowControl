@@ -44,8 +44,8 @@ def main():
         total_rate = 2,             # mL/min 合計流量
         total_time = 10,             # min 合計時間
         alarm_time = 0.5,           # min アラームが鳴る時間
-        slug_length0 = 10,          # mm スラグ1の長さ(実際は少しずれる)
-        slug_length1 = 20,          # mm スラグ2の長さ(実際は少しずれる)
+        slug_volume0 = 10,          # μL スラグ0の体積
+        slug_volume1 = 20,          # μL スラグ1の体積
         response_time = 0.1,        # s 応答を待つ時間
         pump_num = 2,               # ポンプの数
         valve_num = 4,              # バルブの数
