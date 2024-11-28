@@ -1,0 +1,19 @@
+tube_diameter: 1.59
+syringe_diameter: 23
+max_vol: 25
+pump_delay: 0
+total_rate: 20
+total_time: 30
+alarm_time: 0.5
+slug_volume0: 50
+slug_volume1: 50
+response_time: 0.1
+pump_num: 2
+valve_num: 0
+gpio_pin: [6, 13, 19, 26]
+serial_port: ['COM3', 'COM4']
+baudrate: 38400
+Volume0: 0.05
+infuse_time0: 0.15
+Volume1: 0.05
+infuse_time1: 0.15

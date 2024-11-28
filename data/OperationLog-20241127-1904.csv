@@ -1,0 +1,51 @@
+Hour,Minute,Second,millisecond,Device,DeviceNumAction
+19,4,45,167,Pump 0,Response: set diameter 23
+19,4,45,269,Pump 0,"Response: set rate 1
+set diameter ="
+19,4,45,370,Pump 1,Response: set diameter 23
+19,4,45,473,Pump 1,Response: set rate 1
+19,4,45,473,pump 0,infuse
+19,4,45,624,pump 1,infuse
+19,4,45,625,pump 0,stop
+19,4,45,774,pump 0,infuse
+19,4,45,775,pump 1,stop
+19,4,45,924,pump 1,infuse
+19,4,45,925,pump 0,stop
+19,4,46,73,pump 0,infuse
+19,4,46,75,pump 1,stop
+19,4,46,223,pump 1,infuse
+19,4,46,224,pump 0,stop
+19,4,46,374,pump 0,infuse
+19,4,46,375,pump 1,stop
+19,4,46,524,pump 1,infuse
+19,4,46,526,pump 0,stop
+19,4,46,674,pump 0,infuse
+19,4,46,675,pump 1,stop
+19,4,46,824,pump 1,infuse
+19,4,46,825,pump 0,stop
+19,4,46,974,pump 0,infuse
+19,4,46,976,pump 1,stop
+19,4,47,124,pump 1,infuse
+19,4,47,126,pump 0,stop
+19,4,47,274,pump 0,infuse
+19,4,47,275,pump 1,stop
+19,4,47,424,pump 1,infuse
+19,4,47,425,pump 0,stop
+19,4,47,573,pump 0,infuse
+19,4,47,575,pump 1,stop
+19,4,47,723,pump 1,infuse
+19,4,47,725,pump 0,stop
+19,4,47,874,pump 0,infuse
+19,4,47,876,pump 1,stop
+19,4,48,24,pump 1,infuse
+19,4,48,25,pump 0,stop
+19,4,48,174,pump 0,infuse
+19,4,48,175,pump 1,stop
+19,4,48,324,pump 1,infuse
+19,4,48,325,pump 0,stop
+19,4,48,474,pump 0,infuse
+19,4,48,475,pump 1,stop
+19,4,48,624,pump 1,infuse
+19,4,48,625,pump 0,stop
+19,4,48,676,pump 0,stop
+19,4,48,678,pump 1,stop
