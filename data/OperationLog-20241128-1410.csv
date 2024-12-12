@@ -1,0 +1,7 @@
+Hour,Minute,Second,millisecond,Device,DeviceNumAction
+14,10,34,372,Pump 0,Response: set diameter 23
+14,10,34,478,Pump 0,"Response: set rate 1
+set diameter = 23
+>"
+14,10,45,361,pump 0,stop
+14,10,45,368,pump 1,stop
