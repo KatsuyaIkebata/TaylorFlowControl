@@ -6,7 +6,7 @@ def main():
     def create_app():
         root = tk.Tk()
         root.title("Taylor Flow Controller")
-        root.geometry("800x400")
+        root.geometry("600x400")
 
         # Frame to hold canvas and scrollbars
         frame = ttk.Frame(root)

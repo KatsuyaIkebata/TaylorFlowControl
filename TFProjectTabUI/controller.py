@@ -40,63 +40,66 @@ class IterationClass:
             self.vC.append(0)
 
 class RunOpeClass:
+    @staticmethod
     def control(operation):
+        return RunOpeClass.run_operation
+
+    @staticmethod
+    def run_operation(operation):
         config = operation.config
         for i in range(config.pump_num):
-            if config.passed_time >= config.Timing.pC[i] and config.Iteration.pC[i] < config.Iteration.pA[i]:
-                operation.Pump[i].stop(config)
-                config.Iteration.pC[i] += 1
+            if operation.passed_time >= operation.Timing.pC[i] and operation.Iteration.pC[i] < operation.Iteration.pA[i]:
+                operation.Pump[i].stop(operation)
+                operation.Iteration.pC[i] += 1
 
-            if config.passed_time >= config.Timing.pD[i] and config.Iteration.pD[i] < config.Iteration.pA[i]:   
-                config.Pump[i].receive_command(config)
-                config.Iteration.pD[i] += 1
+            if operation.passed_time >= operation.Timing.pD[i] and operation.Iteration.pD[i] < operation.Iteration.pA[i]:   
+                operation.Pump[i].receive_command(operation)
+                operation.Iteration.pD[i] += 1
 
-        if config.passed_time >= config.Timing.pA[0] and config.Iteration.pA[0] == config.Iteration.pC[0]:
-            config.Timing.pB[0] = config.Timing.pA[0] + config.config.response_time   # Aの押出開始後、応答時間が過ぎたら実行開始
-            config.Timing.pC[0] = config.Timing.pA[0] + config.config.infuse_time[0]    # ポンプ0の押出時間後に実行開始
-            config.Timing.pD[0] = config.Timing.pC[0] + config.config.response_time   # ポンプ0の停止後、応答時間が過ぎたら実行開始
+        if operation.passed_time >= operation.Timing.pA[0] and operation.Iteration.pA[0] == operation.Iteration.pC[0]:
+            operation.Timing.pB[0] = operation.Timing.pA[0] + operation.config.response_time   # Aの押出開始後、応答時間が過ぎたら実行開始
+            operation.Timing.pC[0] = operation.Timing.pA[0] + operation.config.infuse_time[0]    # ポンプ0の押出時間後に実行開始
+            operation.Timing.pD[0] = operation.Timing.pC[0] + operation.config.response_time   # ポンプ0の停止後、応答時間が過ぎたら実行開始
             for j in range(config.valve_num):
-                if Sort.func == 0:
-                    config.Timing.vA[j] = config.Timing.pA[0] + config.delays[j][0] # ポンプ0の押出開始後、遅れ時間経過したらバルブjを開放（電源OFF）
-                    config.Timing.vC[j] = config.Timing.pC[0] + config.delays[j][1] # ポンプ0の停止後、遅れ時間経過したらバルブjを閉鎖（電源ON）
-            config.Pump[0].infuse(operation)
-            config.Iteration.pA[0] += 1
-            config.Timing.pA[0] = 0
-            # print(f'Iteration of 1A: {config.Iteration.pA[0]}')
+                if Sort.func(j) == 0:
+                    operation.Timing.vA[j] = operation.Timing.pA[0] + c.delays[j][0] # ポンプ0の押出開始後、遅れ時間経過したらバルブjを開放（電源OFF）
+                    operation.Timing.vC[j] = operation.Timing.pC[0] + c.delays[j][1] # ポンプ0の停止後、遅れ時間経過したらバルブjを閉鎖（電源ON）
+            operation.Pump[0].infuse(operation)
+            operation.Iteration.pA[0] += 1
+            operation.Timing.pA[0] = 0
+            # print(f'Iteration of 1A: {operation.Iteration.pA[0]}')
             for i in range(config.pump_num):
-                config.Timing.pA[0] += config.config.infuse_time[i] * config.Iteration.pA[i]  # プロセス0Aの次の実行時間を設定
-                # print(f'config.Timing.pA[0]: {config.Timing.pA[0]}')
+                operation.Timing.pA[0] += operation.config.infuse_time[i] * (operation.Iteration.pC[i] + 1)  # プロセス0Aの次の実行時間を設定
+                # print(f'operation.Timing.pA[0]: {operation.Timing.pA[0]}')
 
         for i in range(1, config.pump_num):
-            if config.passed_time >= config.Timing.pA[i] and config.Iteration.pA[i] == config.Iteration.pC[i]:
-                config.Timing.pB[i] = config.Timing.pA[i] + config.config.response_time  # Bの押出開始後、応答時間が過ぎたら実行開始
-                config.Timing.pC[i] = config.Timing.pA[i] + config.config.infuse_time1   # ポンプ1の押出時間後に実行開始
-                config.Timing.pD[i] = config.Timing.pC[i] + config.config.response_time  # ポンプ1の停止後、応答時間が過ぎたら実行開始
-                config.Timing.vA[i] = config.Timing.pA[i] + config.delays[1][0] # ポンプ1の押出開始後、遅れ時間経過したらバルブ1を開放（電源OFF）
-                config.Timing.vC[i] = config.Timing.pC[i] + config.delays[1][1] # ポンプ1の停止後、遅れ時間経過したらバルブ1を閉鎖（電源ON）
+            if operation.passed_time >= operation.Timing.pA[i] and operation.Iteration.pA[i] == operation.Iteration.pC[i]:
+                operation.Timing.pB[i] = operation.Timing.pA[i] + operation.config.response_time  # Bの押出開始後、応答時間が過ぎたら実行開始
+                operation.Timing.pC[i] = operation.Timing.pA[i] + operation.config.infuse_time[i]   # ポンプ1の押出時間後に実行開始
+                operation.Timing.pD[i] = operation.Timing.pC[i] + operation.config.response_time  # ポンプ1の停止後、応答時間が過ぎたら実行開始
                 for j in range(config.valve_num):
                     if Sort.func(j) == i:
-                        config.Timing.vA[j] = config.Timing.pA[i] + config.delays[i][0] # ポンプ0の押出開始後、遅れ時間経過したらバルブjを開放（電源OFF）
-                        config.Timing.vC[j] = config.Timing.pC[i] + config.delays[i][1] # ポンプ0の停止後、遅れ時間経過したらバルブjを閉鎖（電源ON）
-                config.Pump[i].infuse(operation)
-                config.Iteration.pA[i] += 1
-                # print(f'Iteration of 2A: {config.Iteration.pA[i]}')
-                config.Timing.pA[i] = config.config.infuse_time0 * (config.Iteration.pA[0] + 1) + config.config.infuse_time1 * config.Iteration.pA[i]  # プロセス1Aの次の実行時間を設定
-                # print(f'config.Timing.pA[i]: {config.Timing.pA[i]}')
+                        operation.Timing.vA[j] = operation.Timing.pA[i] + c.delays[i][0] # ポンプ0の押出開始後、遅れ時間経過したらバルブjを開放（電源OFF）
+                        operation.Timing.vC[j] = operation.Timing.pC[i] + c.delays[i][1] # ポンプ0の停止後、遅れ時間経過したらバルブjを閉鎖（電源ON）
+                operation.Pump[i].infuse(operation)
+                operation.Iteration.pA[i] += 1
+                operation.Timing.pA[i] = 0
+                for j in range(config.pump_num):
+                    operation.Timing.pA[i] += operation.config.infuse_time[j] * (operation.Iteration.pC[j] + 1)  # プロセス1Aの次の実行時間を設定
 
         for i in range(config.pump_num):
-            if config.passed_time >= config.Timing.pB[i] and config.Iteration.pB[i] < config.Iteration.pA[i]:   
-                config.Pump[i].receive_command(operation)
-                config.Iteration.pB[i] += 1
+            if operation.passed_time >= operation.Timing.pB[i] and operation.Iteration.pB[i] < operation.Iteration.pA[i]:   
+                operation.Pump[i].receive_command(operation)
+                operation.Iteration.pB[i] += 1
 
             for j in range(config.valve_num):
                 if Sort.func(j) == i:        
-                    if config.passed_time >= config.Timing.vA[j] and config.Iteration.vA[j] == config.Iteration.vC[j]:
-                        config.Valve[j].open(operation)
-                        config.Timing.vA[j] = config.Timing.pA[j] + config.delays[j][0]
-                        config.Iteration.vA[j] += 1
+                    if operation.passed_time >= operation.Timing.vA[j] and operation.Iteration.vA[j] == operation.Iteration.vC[j]:
+                        operation.Valve[j].open(operation)
+                        operation.Timing.vA[j] = operation.Timing.pA[i] + c.delays[j][0]
+                        operation.Iteration.vA[j] += 1
 
-                    if config.passed_time >= config.Timing.vC[j] and config.Iteration.vC[j] < config.Iteration.vA[j]:
-                        config.Valve[j].close(operation)
-                        config.Timing.vC[j] = config.Timing.pC[j] + config.delays[j][1]
-                        config.Iteration.vC[j] += 1
+                    if operation.passed_time >= operation.Timing.vC[j] and operation.Iteration.vC[j] < operation.Iteration.vA[j]:
+                        operation.Valve[j].close(operation)
+                        operation.Timing.vC[j] = operation.Timing.pC[i] + c.delays[j][1]
+                        operation.Iteration.vC[j] += 1

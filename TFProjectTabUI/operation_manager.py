@@ -20,8 +20,8 @@ class Operation:
         c.delays = self.config.delay
         self.status = False            # 運転を継続するか判断するための変数。Trueであれば運転、Falseであれば停止
 
-        self.Pump = [PumpClass(i) for i in self.config.serial_port]
-        for i in self.config.serial_port:
+        self.Pump = [PumpClass(i) for i in range(self.config.pump_num)]
+        for i in range(self.config.pump_num):
             try:
                 self.Pump[i].ser = serial.Serial(port=self.config.serial_port[i], baudrate=self.config.baudrate, timeout=1)
                 print(f'pump{self.Pump[i].id}: {self.config.serial_port[i]}, status: {self.Pump[i].ser.is_open}')
@@ -77,15 +77,12 @@ class Operation:
         self.end_time = self.start_time + self.config.total_time * 60
         self.passed_time = 0 
 
-        if self.config.valve_num == 4 and self.config.pump_num == 2 :
-            self.RunOpe = RunOpeClass.operation
-        else:
-            print("他のバルブとポンプ数でのoperationクラスを作成してください")
+        self.RunOpe = RunOpeClass.control(self)
 
         while time.time() < self.end_time and self.status == True:
             self.passed_time = time.time() - self.start_time 
             self.RunOpe(self)
-            time.sleep(0.01)  # 0.01秒おきに実行
+            # time.sleep(0.01)  # 0.01秒おきに実行
             
         self.stop()
         print("Operation stopped.")

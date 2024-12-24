@@ -59,9 +59,9 @@ class OperationClass:
         # self.Iteration = IterationClass_4_2()
 
     def calculations(self):
-        self.config.Volume0 = self.config.slug_volume0 * 1000 # mL スラグ0の体積
+        self.config.Volume0 = self.config.slug_volume0 / 1000 # mL スラグ0の体積
         self.config.infuse_time0 = self.config.Volume0 / self.config.total_rate * 60 # s ポンプ0を押し出す秒数
-        self.config.Volume1 = self.config.slug_volume1 * 1000 # mL スラグ1の体積
+        self.config.Volume1 = self.config.slug_volume1 / 1000 # mL スラグ1の体積
         self.config.infuse_time1 = self.config.Volume1 / self.config.total_rate * 60 # s ポンプ1を押し出す秒数
 
     def logCSV(self, device, action):

@@ -1,4 +1,5 @@
 from judge_on_off import JudgeClass
+import common_delays as c
 
 class TxtClass:
     def __init__(self, file_name):
@@ -13,7 +14,7 @@ class TxtClass:
             self.write(f"{key}: {value}")
         for i in range(Operation.config.valve_num):
             for j in range(2):
-                self.write(f"Valve {i} {JudgeClass.OpenClose(j)} delay from pump{i} {JudgeClass.InfuseStop(j)}: {Operation.delays[i][j]}")
+                self.write(f"Valve {i} {JudgeClass.OpenClose(j)} delay from pump{i} {JudgeClass.InfuseStop(j)}: {c.delays[i][j]}")
         self.file.close()
 
     
