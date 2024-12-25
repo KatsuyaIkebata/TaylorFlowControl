@@ -1,0 +1,42 @@
+Hour,Minute,Second,millisecond,Device,DeviceNumAction
+19,29,38,701,Pump 0,Response: :
+19,29,38,808,Pump 0,Response: :
+19,29,38,909,Pump 1,Response: :
+19,29,39,10,Pump 1,Response: :
+19,29,39,10,pump 0,infuse
+19,29,39,10,valve 0,open
+19,29,39,20,Pump 0,Response: >
+19,29,42,10,pump 0,stop
+19,29,42,11,pump 1,infuse
+19,29,42,11,valve 0,close
+19,29,42,11,valve 1,open
+19,29,42,20,Pump 0,Response: :
+19,29,42,20,Pump 1,Response: 
+19,29,45,11,pump 1,stop
+19,29,45,11,pump 0,infuse
+19,29,45,11,valve 0,open
+19,29,45,11,valve 1,close
+19,29,45,20,Pump 1,"Response: >
+:"
+19,29,45,20,Pump 0,Response: 
+19,29,48,10,pump 0,stop
+19,29,48,11,pump 1,infuse
+19,29,48,11,valve 0,close
+19,29,48,11,valve 1,open
+19,29,48,20,Pump 0,"Response: >
+:"
+19,29,48,20,Pump 1,Response: 
+19,29,51,10,pump 1,stop
+19,29,51,11,pump 0,infuse
+19,29,51,11,valve 0,open
+19,29,51,11,valve 1,close
+19,29,51,20,Pump 1,"Response: >
+:"
+19,29,51,20,Pump 0,Response: 
+19,29,54,10,pump 0,stop
+19,29,54,11,pump 1,infuse
+19,29,54,11,valve 0,close
+19,29,54,11,valve 1,open
+19,29,54,20,Pump 0,"Response: >
+:"
+19,29,54,20,Pump 1,Response: 

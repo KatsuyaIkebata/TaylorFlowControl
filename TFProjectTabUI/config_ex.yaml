@@ -1,3 +1,6 @@
+''' 
+This is example of config.
+'''
 tube_diameter: 1.59   # mm inner diameter of tube
 syringe_diameter: 35  # mm inner diameter of syringe
 max_vol: 25           # mL max volume of syringe

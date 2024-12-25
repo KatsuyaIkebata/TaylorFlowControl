@@ -1,0 +1,25 @@
+Hour,Minute,Second,millisecond,Device,DeviceNumAction
+18,42,38,20,Pump 0,Response: :
+18,42,38,121,Pump 0,Response: :
+18,42,38,221,Pump 1,Response: :
+18,42,38,322,Pump 1,Response: :
+18,42,38,322,pump 0,infuse
+18,42,38,323,valve 0,open
+18,42,38,332,Pump 0,Response: >
+18,42,41,323,pump 0,stop
+18,42,41,323,pump 1,infuse
+18,42,41,323,valve 0,close
+18,42,41,324,valve 1,open
+18,42,41,332,Pump 0,Response: :
+18,42,41,333,Pump 1,Response: 
+18,42,44,323,pump 1,stop
+18,42,44,323,pump 0,infuse
+18,42,44,323,valve 0,open
+18,42,44,324,valve 1,close
+18,42,44,332,Pump 1,"Response: >
+:"
+18,42,44,333,Pump 0,Response: 
+18,42,44,702,pump 0,stop
+18,42,44,703,pump 1,stop
+18,42,44,703,valve 0,open
+18,42,44,703,valve 1,open

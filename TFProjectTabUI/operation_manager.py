@@ -32,8 +32,8 @@ class Operation:
                     print (f'{i} is not detected')
                 pass
 
-        GPIO.setmode(GPIO.BCM)  # BCM番号でGPIOピンを指定
-        GPIO.setup(self.config.gpio_pin, GPIO.OUT)  # GPIOピンを出力モードに設定
+        # GPIO.setmode(GPIO.BCM)  # BCM番号でGPIOピンを指定
+        # GPIO.setup(self.config.gpio_pin, GPIO.OUT)  # GPIOピンを出力モードに設定
         self.Valve = [ValveClass(i, self.config.gpio_pin[i]) for i in range(self.config.valve_num)]
 
         self.calculations()
@@ -104,4 +104,5 @@ class Operation:
             self.Valve[i].end(self)
         self.status = False
         GPIO.cleanup()
+        print("gpio clean up")
         

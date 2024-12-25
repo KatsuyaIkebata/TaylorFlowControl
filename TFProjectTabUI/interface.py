@@ -52,6 +52,8 @@ class Interface:
             # シリンジポンプ操作スレッドの停止
             Operation.status = False
             self.operation_thread.join()  # スレッドの終了を待つ
+            print("operation_thread over")
+
 
         
 
