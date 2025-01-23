@@ -27,5 +27,10 @@ class ValveClass:
         GPIO.output(self.pin, GPIO.LOW)
 
     def __del__(self):
-        GPIO.cleanup()
-        print(f"gpio was cleaned up.")
+        try:
+            GPIO.cleanup()
+            print(f"gpio was cleaned up.") 
+        except RuntimeWarning:
+            pass
+            # print(f"gpio has been cleaned up.")
+

@@ -1,0 +1,110 @@
+Hour,Minute,Second,millisecond,Device,DeviceNumAction
+14,16,48,409,Pump 0,Response: :
+14,16,48,510,Pump 0,Response: :
+14,16,48,611,Pump 1,Response: :
+14,16,48,711,Pump 1,Response: :
+14,16,48,712,pump 0,infuse
+14,16,48,712,valve 0,open
+14,16,48,722,Pump 0,Response: 
+14,16,49,12,pump 0,stop
+14,16,49,12,pump 1,infuse
+14,16,49,12,valve 0,close
+14,16,49,12,valve 1,open
+14,16,49,22,Pump 0,"Response: >
+:"
+14,16,49,22,Pump 1,Response: 
+14,16,49,312,pump 1,stop
+14,16,49,312,pump 0,infuse
+14,16,49,312,valve 0,open
+14,16,49,312,valve 1,close
+14,16,49,322,Pump 1,"Response: >
+:"
+14,16,49,322,Pump 0,Response: 
+14,16,49,612,pump 0,stop
+14,16,49,612,pump 1,infuse
+14,16,49,612,valve 0,close
+14,16,49,612,valve 1,open
+14,16,49,622,Pump 0,"Response: >
+:"
+14,16,49,622,Pump 1,Response: 
+14,16,49,912,pump 1,stop
+14,16,49,912,pump 0,infuse
+14,16,49,912,valve 0,open
+14,16,49,912,valve 1,close
+14,16,49,922,Pump 1,"Response: >
+:"
+14,16,49,922,Pump 0,Response: 
+14,16,50,212,pump 0,stop
+14,16,50,212,pump 1,infuse
+14,16,50,212,valve 0,close
+14,16,50,212,valve 1,open
+14,16,50,222,Pump 0,"Response: >
+:"
+14,16,50,222,Pump 1,Response: 
+14,16,50,512,pump 1,stop
+14,16,50,512,pump 0,infuse
+14,16,50,512,valve 0,open
+14,16,50,512,valve 1,close
+14,16,50,522,Pump 1,"Response: >
+:"
+14,16,50,522,Pump 0,Response: 
+14,16,50,812,pump 0,stop
+14,16,50,812,pump 1,infuse
+14,16,50,812,valve 0,close
+14,16,50,812,valve 1,open
+14,16,50,822,Pump 0,"Response: >
+:"
+14,16,50,822,Pump 1,Response: 
+14,16,51,112,pump 1,stop
+14,16,51,112,pump 0,infuse
+14,16,51,112,valve 0,open
+14,16,51,112,valve 1,close
+14,16,51,122,Pump 1,"Response: >
+:"
+14,16,51,122,Pump 0,Response: 
+14,16,51,412,pump 0,stop
+14,16,51,412,pump 1,infuse
+14,16,51,412,valve 0,close
+14,16,51,412,valve 1,open
+14,16,51,422,Pump 0,"Response: >
+:"
+14,16,51,422,Pump 1,Response: 
+14,16,51,712,pump 1,stop
+14,16,51,712,pump 0,infuse
+14,16,51,712,valve 0,open
+14,16,51,712,valve 1,close
+14,16,51,722,Pump 1,"Response: >
+:"
+14,16,51,722,Pump 0,Response: 
+14,16,52,12,pump 0,stop
+14,16,52,12,pump 1,infuse
+14,16,52,12,valve 0,close
+14,16,52,12,valve 1,open
+14,16,52,22,Pump 0,"Response: >
+:"
+14,16,52,22,Pump 1,Response: 
+14,16,52,312,pump 1,stop
+14,16,52,312,pump 0,infuse
+14,16,52,312,valve 0,open
+14,16,52,312,valve 1,close
+14,16,52,322,Pump 1,"Response: >
+:"
+14,16,52,322,Pump 0,Response: 
+14,16,52,612,pump 0,stop
+14,16,52,612,pump 1,infuse
+14,16,52,612,valve 0,close
+14,16,52,612,valve 1,open
+14,16,52,622,Pump 0,"Response: >
+:"
+14,16,52,622,Pump 1,Response: 
+14,16,52,912,pump 1,stop
+14,16,52,912,pump 0,infuse
+14,16,52,913,valve 0,open
+14,16,52,913,valve 1,close
+14,16,52,922,Pump 1,"Response: >
+:"
+14,16,52,922,Pump 0,Response: 
+14,16,52,981,pump 0,stop
+14,16,52,981,pump 1,stop
+14,16,52,981,valve 0,open
+14,16,52,981,valve 1,open

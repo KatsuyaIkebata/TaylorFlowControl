@@ -1,11 +1,11 @@
 tube_diameter: 1.59   # mm inner diameter of tube
 syringe_diameter: 35  # mm inner diameter of syringe
-max_vol: 25           # mL max volume of syringe
-total_rate: 1        # mL min-1 total flow rate
+max_vol: 100           # mL max volume of syringe
+total_rate: 10        # mL min-1 total flow rate
 total_time: 30        # min total time
 total_length: 500    # mm tube length
 alarm_time: 3         #    times of residence time passed, alart
-slug_volume: [50, 50] # uL slug volume
+slug_volume: [60, 60] # uL slug volume
 response_time: 0.01    # s waiting the response
 # gpio_pin: [6, 13, 19, 26]  # gpio pin number
 gpio_pin: [6, 13] # gpio pin number

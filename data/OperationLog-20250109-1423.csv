@@ -1,0 +1,237 @@
+Hour,Minute,Second,millisecond,Device,DeviceNumAction
+14,23,19,572,Pump 0,Response: :
+14,23,19,673,Pump 0,Response: :
+14,23,19,774,Pump 1,Response: :
+14,23,19,875,Pump 1,Response: :
+14,23,19,876,pump 0,infuse
+14,23,19,877,valve 0,open
+14,23,19,886,Pump 0,Response: >
+14,23,21,76,pump 0,stop
+14,23,21,76,pump 1,infuse
+14,23,21,77,valve 0,close
+14,23,21,77,valve 1,open
+14,23,21,86,Pump 0,Response: :
+14,23,21,86,Pump 1,Response: >
+14,23,25,876,pump 1,stop
+14,23,25,876,pump 0,infuse
+14,23,25,877,valve 0,open
+14,23,25,877,valve 1,close
+14,23,25,886,Pump 1,Response: :
+14,23,25,886,Pump 0,Response: 
+14,23,27,76,pump 0,stop
+14,23,27,76,pump 1,infuse
+14,23,27,76,valve 0,close
+14,23,27,77,valve 1,open
+14,23,27,86,Pump 0,"Response: >
+:"
+14,23,27,86,Pump 1,Response: 
+14,23,31,876,pump 1,stop
+14,23,31,876,pump 0,infuse
+14,23,31,876,valve 0,open
+14,23,31,877,valve 1,close
+14,23,31,886,Pump 1,"Response: >
+:"
+14,23,31,886,Pump 0,Response: >
+14,23,33,76,pump 0,stop
+14,23,33,76,pump 1,infuse
+14,23,33,77,valve 0,close
+14,23,33,77,valve 1,open
+14,23,33,86,Pump 0,Response: :
+14,23,33,86,Pump 1,Response: 
+14,23,37,876,pump 1,stop
+14,23,37,876,pump 0,infuse
+14,23,37,876,valve 0,open
+14,23,37,877,valve 1,close
+14,23,37,886,Pump 1,"Response: >
+:"
+14,23,37,886,Pump 0,Response: 
+14,23,39,76,pump 0,stop
+14,23,39,76,pump 1,infuse
+14,23,39,76,valve 0,close
+14,23,39,77,valve 1,open
+14,23,39,86,Pump 0,"Response: >
+:"
+14,23,39,86,Pump 1,Response: 
+14,23,43,876,pump 1,stop
+14,23,43,876,pump 0,infuse
+14,23,43,877,valve 0,open
+14,23,43,877,valve 1,close
+14,23,43,886,Pump 1,"Response: >
+:"
+14,23,43,886,Pump 0,Response: 
+14,23,45,76,pump 0,stop
+14,23,45,76,pump 1,infuse
+14,23,45,76,valve 0,close
+14,23,45,77,valve 1,open
+14,23,45,86,Pump 0,"Response: >
+:"
+14,23,45,86,Pump 1,Response: 
+14,23,49,876,pump 1,stop
+14,23,49,876,pump 0,infuse
+14,23,49,876,valve 0,open
+14,23,49,877,valve 1,close
+14,23,49,886,Pump 1,"Response: >
+:"
+14,23,49,886,Pump 0,Response: 
+14,23,51,76,pump 0,stop
+14,23,51,76,pump 1,infuse
+14,23,51,76,valve 0,close
+14,23,51,77,valve 1,open
+14,23,51,86,Pump 0,"Response: >
+:"
+14,23,51,86,Pump 1,Response: 
+14,23,55,876,pump 1,stop
+14,23,55,876,pump 0,infuse
+14,23,55,876,valve 0,open
+14,23,55,877,valve 1,close
+14,23,55,886,Pump 1,"Response: >
+:"
+14,23,55,886,Pump 0,Response: 
+14,23,57,76,pump 0,stop
+14,23,57,76,pump 1,infuse
+14,23,57,76,valve 0,close
+14,23,57,77,valve 1,open
+14,23,57,86,Pump 0,"Response: >
+:"
+14,23,57,86,Pump 1,Response: >
+14,24,1,878,pump 1,stop
+14,24,1,879,pump 0,infuse
+14,24,1,879,valve 0,open
+14,24,1,879,valve 1,close
+14,24,1,886,Pump 1,Response: :
+14,24,1,886,Pump 0,Response: 
+14,24,3,76,pump 0,stop
+14,24,3,76,pump 1,infuse
+14,24,3,76,valve 0,close
+14,24,3,77,valve 1,open
+14,24,3,86,Pump 0,"Response: >
+:"
+14,24,3,86,Pump 1,Response: 
+14,24,7,876,pump 1,stop
+14,24,7,876,pump 0,infuse
+14,24,7,877,valve 0,open
+14,24,7,877,valve 1,close
+14,24,7,886,Pump 1,"Response: >
+:"
+14,24,7,886,Pump 0,Response: 
+14,24,9,76,pump 0,stop
+14,24,9,76,pump 1,infuse
+14,24,9,76,valve 0,close
+14,24,9,77,valve 1,open
+14,24,9,86,Pump 0,"Response: >
+:"
+14,24,9,86,Pump 1,Response: 
+14,24,13,876,pump 1,stop
+14,24,13,877,pump 0,infuse
+14,24,13,877,valve 0,open
+14,24,13,877,valve 1,close
+14,24,13,886,Pump 1,"Response: >
+:"
+14,24,13,886,Pump 0,Response: >
+14,24,15,76,pump 0,stop
+14,24,15,76,pump 1,infuse
+14,24,15,76,valve 0,close
+14,24,15,77,valve 1,open
+14,24,15,86,Pump 0,Response: :
+14,24,15,86,Pump 1,Response: 
+14,24,19,876,pump 1,stop
+14,24,19,876,pump 0,infuse
+14,24,19,877,valve 0,open
+14,24,19,877,valve 1,close
+14,24,19,886,Pump 1,"Response: >
+:"
+14,24,19,886,Pump 0,Response: 
+14,24,21,76,pump 0,stop
+14,24,21,76,pump 1,infuse
+14,24,21,76,valve 0,close
+14,24,21,77,valve 1,open
+14,24,21,86,Pump 0,"Response: >
+:"
+14,24,21,86,Pump 1,Response: 
+14,24,25,876,pump 1,stop
+14,24,25,876,pump 0,infuse
+14,24,25,876,valve 0,open
+14,24,25,877,valve 1,close
+14,24,25,886,Pump 1,"Response: >
+:"
+14,24,25,886,Pump 0,Response: 
+14,24,27,76,pump 0,stop
+14,24,27,76,pump 1,infuse
+14,24,27,76,valve 0,close
+14,24,27,77,valve 1,open
+14,24,27,86,Pump 0,"Response: >
+:"
+14,24,27,86,Pump 1,Response: 
+14,24,31,876,pump 1,stop
+14,24,31,876,pump 0,infuse
+14,24,31,876,valve 0,open
+14,24,31,877,valve 1,close
+14,24,31,886,Pump 1,"Response: >
+:"
+14,24,31,886,Pump 0,Response: 
+14,24,33,76,pump 0,stop
+14,24,33,76,pump 1,infuse
+14,24,33,76,valve 0,close
+14,24,33,77,valve 1,open
+14,24,33,86,Pump 0,"Response: >
+:"
+14,24,33,86,Pump 1,Response: 
+14,24,37,876,pump 1,stop
+14,24,37,876,pump 0,infuse
+14,24,37,877,valve 0,open
+14,24,37,877,valve 1,close
+14,24,37,886,Pump 1,"Response: >
+:"
+14,24,37,886,Pump 0,Response: 
+14,24,39,76,pump 0,stop
+14,24,39,76,pump 1,infuse
+14,24,39,76,valve 0,close
+14,24,39,77,valve 1,open
+14,24,39,86,Pump 0,"Response: >
+:"
+14,24,39,86,Pump 1,Response: >
+14,24,43,876,pump 1,stop
+14,24,43,876,pump 0,infuse
+14,24,43,876,valve 0,open
+14,24,43,877,valve 1,close
+14,24,43,886,Pump 1,Response: :
+14,24,43,886,Pump 0,Response: 
+14,24,45,76,pump 0,stop
+14,24,45,76,pump 1,infuse
+14,24,45,76,valve 0,close
+14,24,45,77,valve 1,open
+14,24,45,86,Pump 0,"Response: >
+:"
+14,24,45,86,Pump 1,Response: 
+14,24,49,876,pump 1,stop
+14,24,49,876,pump 0,infuse
+14,24,49,877,valve 0,open
+14,24,49,877,valve 1,close
+14,24,49,886,Pump 1,"Response: >
+:"
+14,24,49,886,Pump 0,Response: 
+14,24,51,76,pump 0,stop
+14,24,51,76,pump 1,infuse
+14,24,51,76,valve 0,close
+14,24,51,77,valve 1,open
+14,24,51,86,Pump 0,"Response: >
+:"
+14,24,51,86,Pump 1,Response: 
+14,24,55,876,pump 1,stop
+14,24,55,876,pump 0,infuse
+14,24,55,876,valve 0,open
+14,24,55,877,valve 1,close
+14,24,55,886,Pump 1,"Response: >
+:"
+14,24,55,886,Pump 0,Response: 
+14,24,57,76,pump 0,stop
+14,24,57,76,pump 1,infuse
+14,24,57,76,valve 0,close
+14,24,57,77,valve 1,open
+14,24,57,86,Pump 0,"Response: >
+:"
+14,24,57,86,Pump 1,Response: 
+14,24,58,145,pump 0,stop
+14,24,58,146,pump 1,stop
+14,24,58,146,valve 0,open
+14,24,58,146,valve 1,open
