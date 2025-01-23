@@ -56,23 +56,7 @@ class RunOpeClass:
                 operation.Pump[i].receive_command(operation)
                 operation.Iteration.pD[i] += 1
 
-        if operation.passed_time >= operation.Timing.pA[0] and operation.Iteration.pA[0] == operation.Iteration.pC[0]:
-            operation.Timing.pB[0] = operation.Timing.pA[0] + operation.config.response_time   # Aの押出開始後、応答時間が過ぎたら実行開始
-            operation.Timing.pC[0] = operation.Timing.pA[0] + operation.config.infuse_time[0]    # ポンプ0の押出時間後に実行開始
-            operation.Timing.pD[0] = operation.Timing.pC[0] + operation.config.response_time   # ポンプ0の停止後、応答時間が過ぎたら実行開始
-            for j in range(config.valve_num):
-                if Sort.func(j) == 0:
-                    operation.Timing.vA[j] = operation.Timing.pA[0] + c.delays[j][0] # ポンプ0の押出開始後、遅れ時間経過したらバルブjを開放（電源OFF）
-                    operation.Timing.vC[j] = operation.Timing.pC[0] + c.delays[j][1] # ポンプ0の停止後、遅れ時間経過したらバルブjを閉鎖（電源ON）
-            operation.Pump[0].infuse(operation)
-            operation.Iteration.pA[0] += 1
-            operation.Timing.pA[0] = 0
-            # print(f'Iteration of 1A: {operation.Iteration.pA[0]}')
-            for i in range(config.pump_num):
-                operation.Timing.pA[0] += operation.config.infuse_time[i] * (operation.Iteration.pC[i] + 1)  # プロセス0Aの次の実行時間を設定
-                # print(f'operation.Timing.pA[0]: {operation.Timing.pA[0]}')
-
-        for i in range(1, config.pump_num):
+        for i in range(config.pump_num):
             if operation.passed_time >= operation.Timing.pA[i] and operation.Iteration.pA[i] == operation.Iteration.pC[i]:
                 operation.Timing.pB[i] = operation.Timing.pA[i] + operation.config.response_time  # Bの押出開始後、応答時間が過ぎたら実行開始
                 operation.Timing.pC[i] = operation.Timing.pA[i] + operation.config.infuse_time[i]   # ポンプ1の押出時間後に実行開始
@@ -85,7 +69,7 @@ class RunOpeClass:
                 operation.Iteration.pA[i] += 1
                 operation.Timing.pA[i] = 0
                 for j in range(config.pump_num):
-                    operation.Timing.pA[i] += operation.config.infuse_time[j] * (operation.Iteration.pC[j] + 1)  # プロセス1Aの次の実行時間を設定
+                    operation.Timing.pA[i] += operation.config.infuse_time[j] * (operation.Iteration.pC[j] + 1)  # プロセスiAの次の実行時間を設定
 
         for i in range(config.pump_num):
             if operation.passed_time >= operation.Timing.pB[i] and operation.Iteration.pB[i] < operation.Iteration.pA[i]:   
