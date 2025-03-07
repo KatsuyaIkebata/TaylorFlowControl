@@ -1,0 +1,25 @@
+tube_diameter: 1.59
+syringe_diameter: 35.0
+max_vol: 100.0
+total_rate: 8.0
+total_time: 30.0
+total_length: 400.0
+alarm_time: 3.0
+slug_volume: [100.0, 100.0]
+response_time: 0.01
+gpio_pin: [6, 13, 19, 26]
+serial_port: ['/dev/ttyACM0', '/dev/ttyACM1']
+baudrate: 115200
+delay: [[-0.02, 0.02], [-0.02, 0.02], [0.0, 0.0], [0.0, 0.0]]
+pump_num: 2
+valve_num: 4
+Volume: [0.1, 0.1]
+infuse_time: [0.75, 0.75]
+Valve 0 Open delay from pump0 infuse: -0.02
+Valve 0 Close delay from pump0 stop: 0.02
+Valve 1 Open delay from pump1 infuse: -0.02
+Valve 1 Close delay from pump1 stop: 0.02
+Valve 2 Open delay from pump2 infuse: 0.0
+Valve 2 Close delay from pump2 stop: 0.0
+Valve 3 Open delay from pump3 infuse: 0.0
+Valve 3 Close delay from pump3 stop: 0.0
